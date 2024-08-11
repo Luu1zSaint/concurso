@@ -9,32 +9,28 @@
     </section>
     <section class="ac-numbers_select">
         <div class="ac-select">
-<<<<<<< HEAD
             <h4 class="h4-title ac-select-title">Selecione os Números: </h4>
-=======
-            <h4 class="h4-title">Selecione os Números: </h4>
->>>>>>> 4f87911c82e2f645b6cacac502b1f4c558b487b6
             <div class="ac-btns_selection">
-                <button class="btn_select_manual">Selecionar Manualmente</button>
-                <button class="btn_select_auto">Selecionar Automaticamente</button>
+                <button id="btn_manual" class="btn_select_manual">Selecionar Manualmente</button>
+                <button id="btn_auto" class="btn_select_auto">Selecionar Automaticamente</button>
             </div>
         </div>
         <div class="ac-grid_numbers">
-            <button class="ac-grid_item chosen">0001</button>
-            <button class="ac-grid_item chosen">0002</button>
-            <button class="ac-grid_item">0003</button>
-            <button class="ac-grid_item">0004</button>
-            <button class="ac-grid_item selected">0005</button>
-            <button class="ac-grid_item selected">0006</button>
-            <button class="ac-grid_item selected">0007</button>
-            <button class="ac-grid_item">0008</button>
-            <button class="ac-grid_item">0009</button>
-            <button class="ac-grid_item chosen">0010</button>
-            <button class="ac-grid_item">0018</button>
-            <button class="ac-grid_item">0029</button>
-            <button class="ac-grid_item chosen">10</button>
-            <button class="ac-grid_item">0078</button>
-            <button class="ac-grid_item">0099</button>
+            <button class="ac-grid_item" id="1">0001</button>
+            <button class="ac-grid_item" id="2">0002</button>
+            <button class="ac-grid_item" id="3">0003</button>
+            <button class="ac-grid_item" id="4">0004</button>
+            <button class="ac-grid_item" id="5">0005</button>
+            <button class="ac-grid_item" id="6">0006</button>
+            <button class="ac-grid_item" id="7">0007</button>
+            <button class="ac-grid_item" id="8">0008</button>
+            <button class="ac-grid_item" id="9">0009</button>
+            <button class="ac-grid_item" id="10">0010</button>
+            <button class="ac-grid_item" id="18">0018</button>
+            <button class="ac-grid_item" id="29">0029</button>
+            <button class="ac-grid_item" id="55">0055</button>
+            <button class="ac-grid_item" id="78">0078</button>
+            <button class="ac-grid_item" id="99">0099</button>
         </div>
         <div class="ac-show_numbers">
             <h4 class="h4-title ">Números Selecionados</h4>

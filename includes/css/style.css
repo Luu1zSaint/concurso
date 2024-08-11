@@ -156,6 +156,10 @@ body {
   border: 2px solid #02ab64 !important;
   background-color: #1d7853;
 }
+.btn_select {
+  border: 2px solid #02ab658a !important;
+  background-color: #1d78548a !important;
+}
 /*GRID NUMBERS*/
 .ac-grid_numbers {
   display: flex;
@@ -181,29 +185,25 @@ body {
 }
 .ac-grid_item:hover {
   color: #fff;
-  background-color: #1d7853;
+  background-color: #1d7853 !important;
   border: 2px solid #02ab64 !important;
+}
+.normal {
+  color: #fff;
+  background-color: #02ab64 !important;
+  border: 2px solid #1d7853 !important;
 }
 .selected {
   color: #fff;
-  background-color: #ab9a03;
+  background-color: #ab9a03 !important;
   border: 2px solid #7a7a22 !important;
-}
-.selected:hover {
-  color: #fff;
-  background-color: #7a7a22;
-  border: 2px solid #ab9a03 !important;
 }
 .chosen {
   color: #fff;
-  background-color: #ab0000;
+  background-color: #ab0000 !important;
   border: 2px solid #701714 !important;
 }
-.chosen:hover {
-  color: #fff;
-  background-color: #701714;
-  border: 2px solid #ab0000 !important;
-}
+
 /*SHOW NUMBERS*/
 .ac-show_numbers {
   text-align: center;
