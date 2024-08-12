@@ -8,27 +8,36 @@ document.querySelectorAll(".ac-grid_item").forEach(function (botao) {
     }
   });
 });
-document.getElementById("btn_manual").addEventListener("click", function () {
-  let btn_auto = document.getElementById("btn_auto");
-  if (
-    !this.classList.contains("btn_select") &&
-    btn_auto.classList.contains("btn_select")
-  ) {
-    btn_auto.classList.remove("btn_select");
-    this.classList.add("btn_select");
-  } else {
-    this.classList.toggle("btn_select");
+
+function formatResult(array) {
+  array.sort((a, b) => a - b);
+  document.getElementById("resultNums").textContent = array.join(', ');
+}
+function qtdNums(array) {
+  console.log(array);
+  let qtdArray = array.length;
+  if (qtdArray == 1 ){
+    document.getElementById("qtd_num_select").textContent = qtdArray + " Número Selecionado :";
+    document.getElementById("nums_selected").textContent ="Número Selecionado";
+    document.getElementById("second_total").classList.remove('hidden');
+  }else if(qtdArray > 1 ){
+    document.getElementById("qtd_num_select").textContent = qtdArray + " Números Selecionados :";
+    document.getElementById("nums_selected").textContent ="Números Selecionados";
+  }else{
+    document.getElementById("nums_selected").textContent ="";
+    document.getElementById("qtd_num_select").textContent =" ";
   }
-});
-document.getElementById("btn_auto").addEventListener("click", function () {
-  let btn_manual = document.getElementById("btn_manual");
-  if (
-    !this.classList.contains("btn_select") &&
-    btn_manual.classList.contains("btn_select")
-  ) {
-    btn_manual.classList.remove("btn_select");
-    this.classList.add("btn_select");
-  } else {
-    this.classList.toggle("btn_select");
-  }
-});
+}
+let arrayBtn = [];
+document.querySelectorAll(".ac-grid_item").forEach((buttom) =>{
+  buttom.addEventListener("click", () => {
+    let btnValue = buttom.value;
+    if (arrayBtn.includes(btnValue)){
+      let index = arrayBtn.indexOf(btnValue);
+      arrayBtn.splice(index, 1);
+    }else{
+      arrayBtn.push(btnValue);
+    }
+    formatResult(arrayBtn);
+    qtdNums(arrayBtn)
+})})

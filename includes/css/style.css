@@ -1,382 +1,335 @@
 .ac-content_widget
-  *
-  :not(
-    .wp-core-ui,
-    .wp-editor-wrap,
-    .tmce-active,
-    .wp-editor-tools,
-    .hide-if-no-js,
-    .wp-media-buttons,
-    .button,
-    .insert-media,
-    .add_media,
-    .wp-media-buttons-icon,
-    .wp-editor-tabs,
-    .wp-switch-editor,
-    .switch-tmce,
-    .switch-html,
-    .wp-editor-container,
-    .quicktags-toolbar,
-    .mce-tinymce,
-    .mce-container,
-    .mce-panel,
-    .mce-container-body,
-    .mce-stack-layout,
-    .mce-top-part,
-    .mce-stack-layout-item,
-    .mce-first,
-    .mce-menubar,
-    .mce-toolbar,
-    .mce-flow-layout,
-    .mce-widget,
-    .mce-btn,
-    .mce-menubtn,
-    .mce-flow-layout-item,
-    .mce-btn-has-text,
-    .mce-txt,
-    .mce-caret,
-    .mce-last,
-    .mce-toolbar-grp,
-    .mce-btn-group,
-    .mce-disabled,
-    .mce-ico,
-    .mce-i-undo,
-    .mce-i-redo,
-    .mce-i-bold,
-    .mce-i-italic,
-    .mce-i-alignleft,
-    .mce-i-aligncenter,
-    .mce-i-alignright,
-    .mce-i-alignjustify,
-    .mce-i-outdent,
-    .mce-i-indent,
-    .mce-edit-area,
-    .mce-statusbar,
-    .mce-path,
-    .mce-path-item,
-    .mce-resizehandle,
-    .mce-i-resize,
-    .mce-branding,
-    .mce-label,
-    .wp-editor-area
-  ) {
-  margin: 0;
-  padding: 0;
-  outline: none;
-  text-decoration: none;
-  border: none;
-  box-sizing: border-box !important;
-  transition: all 0.3s linear;
-  font-family: "Baloo Thambi 2", sans-serif !important;
+    *
+    :not(
+        .wp-core-ui,
+        .wp-editor-wrap,
+        .tmce-active,
+        .wp-editor-tools,
+        .hide-if-no-js,
+        .wp-media-buttons,
+        .button,
+        .insert-media,
+        .add_media,
+        .wp-media-buttons-icon,
+        .wp-editor-tabs,
+        .wp-switch-editor,
+        .switch-tmce,
+        .switch-html,
+        .wp-editor-container,
+        .quicktags-toolbar,
+        .mce-tinymce,
+        .mce-container,
+        .mce-panel,
+        .mce-container-body,
+        .mce-stack-layout,
+        .mce-top-part,
+        .mce-stack-layout-item,
+        .mce-first,
+        .mce-menubar,
+        .mce-toolbar,
+        .mce-flow-layout,
+        .mce-widget,
+        .mce-btn,
+        .mce-menubtn,
+        .mce-flow-layout-item,
+        .mce-btn-has-text,
+        .mce-txt,
+        .mce-caret,
+        .mce-last,
+        .mce-toolbar-grp,
+        .mce-btn-group,
+        .mce-disabled,
+        .mce-ico,
+        .mce-i-undo,
+        .mce-i-redo,
+        .mce-i-bold,
+        .mce-i-italic,
+        .mce-i-alignleft,
+        .mce-i-aligncenter,
+        .mce-i-alignright,
+        .mce-i-alignjustify,
+        .mce-i-outdent,
+        .mce-i-indent,
+        .mce-edit-area,
+        .mce-statusbar,
+        .mce-path,
+        .mce-path-item,
+        .mce-resizehandle,
+        .mce-i-resize,
+        .mce-branding,
+        .mce-label,
+        .wp-editor-area
+    ) {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box !important;
+    transition: all 0.3s linear;
+    font-family: "Baloo Thambi 2", sans-serif !important;
 }
 html,
 body {
-  background-color: #f5f8fc;
+    background-color: #f5f8fc;
 }
 /*STANDART*/
 .h4-title {
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 500;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
 }
 #btn_selected {
-  background-color: #ddd;
-  border: 2px solid #aaa;
-  color: #666;
+    background-color: #ddd;
+    border: 2px solid #aaa;
+    color: #666;
 }
 /*DESKTOP*/
-/*MAIN*/
-.ac-content_widget {
-  display: flex;
-  align-items: center;
-  flex-flow: column wrap;
-  max-width: 1024px;
-  margin: auto;
-  height: 105vh;
-}
 /*BANNER*/
-.ac-banner .ac-banner_img {
-  background-image: url(../img/img-desktop2.png);
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 320px;
-  border-radius: 15px;
-  margin: auto;
+.ac-img_mobile,
+.ac-img_tablet {
+    display: none;
+}
+.ac-img_desktop {
+    display: block;
+}
+.ac-banner_img img {
+    width: 100%;
 }
 /*BANER DESC*/
 .ac-banner .ac-banner_desc {
-  padding-top: 50px;
+    padding-top: 50px;
 }
 .ac-banner .ac-banner_desc p {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 /*NUMBERS SELECT*/
 .ac-numbers_select {
-  width: 100%;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  padding-top: 50px;
+    width: 100%;
+    padding-top: 50px;
 }
 .ac-numbers_select .ac-select {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
 }
 .ac-select-title {
-  padding-bottom: 30px !important;
+    padding-bottom: 30px !important;
 }
 .ac-btns_selection {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  gap: 15px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    gap: 15px;
 }
-.ac-select button {
-  outline: none;
-  flex: 1 1;
-  height: 34px;
-  font-size: 16px;
-  background-color: #02ab64;
-  border: 2px solid #1d7853 !important;
-  height: 37px;
-  border-radius: 5px !important;
-  color: #fff;
-  padding: 10px 20px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600 !important;
-  text-transform: uppercase;
+.ac-btn_select {
+    flex: 1 1;
+    font-size: 16px;
+    border: 2px solid #f27e63 !important;
+    background-color: transparent !important;
+    color: #f27e63 !important;
+    border-radius: 5px !important;
+    padding: 10px 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600 !important;
+    text-transform: uppercase;
 }
-.ac-select button:hover {
-  border: 2px solid #02ab64 !important;
-  background-color: #1d7853;
-}
-.btn_select {
-  border: 2px solid #02ab658a !important;
-  background-color: #1d78548a !important;
+.ac-btn_select.ac-active,
+.ac-btn_select:hover {
+    border: 2px solid #f27e63 !important;
+    background-color: #f27e63 !important;
+    color: #fff !important;
 }
 /*GRID NUMBERS*/
 .ac-grid_numbers {
-  display: flex;
-  gap: 15px;
-  flex-flow: row wrap;
-  justify-content: center;
-  width: 100%;
-  padding-top: 20px !important;
+    display: flex;
+    gap: 15px;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px !important;
 }
 .ac-grid_item {
-  color: #fff;
-  background-color: #02ab64;
-  border: 2px solid #1d7853 !important;
-  flex: 1 1;
-  min-width: 50px;
-  height: 34px;
-  border-radius: 3px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
+    color: #fff;
+    background-color: #02ab64;
+    border: 2px solid #1d7853 !important;
+    flex: 1 1;
+    min-width: 50px;
+    border-radius: 3px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
 }
 .ac-grid_item:hover {
-  color: #fff;
-  background-color: #1d7853 !important;
-  border: 2px solid #02ab64 !important;
+    color: #fff;
+    background-color: #ab9a03 !important;
+    border: 2px solid #7a7a22 !important;
 }
 .normal {
-  color: #fff;
-  background-color: #02ab64 !important;
-  border: 2px solid #1d7853 !important;
+    color: #fff;
+    background-color: #02ab64 !important;
+    border: 2px solid #1d7853 !important;
 }
 .selected {
-  color: #fff;
-  background-color: #ab9a03 !important;
-  border: 2px solid #7a7a22 !important;
+    color: #fff;
+    background-color: #ab9a03 !important;
+    border: 2px solid #7a7a22 !important;
 }
 .chosen {
-  color: #fff;
-  background-color: #ab0000 !important;
-  border: 2px solid #701714 !important;
+    color: #fff;
+    background-color: #ab0000 !important;
+    border: 2px solid #701714 !important;
 }
-
 /*SHOW NUMBERS*/
 .ac-show_numbers {
-  text-align: center;
-  padding: 50px 0px !important;
+    text-align: center;
+    padding: 50px 0px !important;
 }
 .ac-show_numbers p {
-  font-weight: 500;
-  font-size: 20px;
-  padding-top: 20px !important;
+    font-weight: 500;
+    font-size: 20px;
+    padding-top: 20px !important;
+}
+.ac-qtd_num_select {
+    display: none;
 }
 /*FOMR*/
 .ac-form_info {
-  margin-top: 20px;
-  width: 100%;
+    margin: 20px 0px 100px 0px;
+    width: 100%;
 }
 .ac-form_info form {
-  display: flex;
-  flex-flow: row;
-  width: 100%;
-  gap: 15px;
-  justify-content: space-evenly;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    gap: 15px;
+    justify-content: space-evenly;
 }
 .ac-form_info form div {
-  flex: 1 1;
+    flex: 1 1;
 }
 .ac-form_info form input {
-  width: 100%;
-  height: 34px;
-  outline: none;
-  border: 2px solid #1d7853 !important;
-  border-radius: 3px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  padding-left: 10px;
-  font-size: 16px;
-  font-weight: 400;
-  gap: 20px;
+    width: 100%;
+    border-bottom: 2px solid #f27e63 !important;
+    border-radius: 3px;
+    padding: 10px 25px !important;
+    font-size: 16px;
 }
 .ac-form_info form input:focus {
-  box-shadow: 1px 1px 5px #1d7853;
-  padding-left: 10px;
-  font-size: 16px;
-  font-weight: 400;
+    box-shadow: 0px 2px 5px #f27e63;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
 }
 .ac-form_info form label {
-  font-size: 16px;
-  padding-bottom: 10px !important;
+    font-size: 16px;
+    padding-bottom: 10px !important;
 }
 /*PAYMENT*/
 .ac-payment {
-  position: fixed;
-  background-color: #000;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  padding: 25px 0px;
+    position: fixed;
+    z-index: 999;
+    background-color: #0d0d0d;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 25px 0px;
 }
 .ac-payment .ac-container_pay {
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 20px !important;
-  width: 1024px;
-}
-.ac-total {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-.ac-total span {
-  font-weight: 500;
-  font-size: 24px;
-}
-.ac-btn_payment button {
-  background-color: #02ab64;
-  border: 2px solid #1d7853 !important;
-  height: 37px;
-  border-radius: 5px !important;
-  color: #fff;
-  padding: 10px 20px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600 !important;
-  text-transform: uppercase;
-}
-.ac-btn_payment button:hover {
-  border: 2px solid #02ab64 !important;
-  background-color: #1d7853;
-}
-.ac-btn_payment a {
-  color: #fff;
-  text-transform: uppercase;
-}
-
-@media screen and ((min-width: 320px) and (max-width: 767px)) {
-  /*STANDART*/
-  .h4-title {
-    font-size: 18px;
-  }
-  /*MAIN*/
-  .ac-content_widget {
-    height: 160vh;
-  }
-  /*BANNER*/
-  .ac-banner .ac-banner_img {
-    background-image: url(../img/image_mobile.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 300px;
-    height: 280px;
-    border-radius: 15px;
     margin: auto;
-  }
-  .ac-banner_desc p {
-    font-size: 17px;
-  }
-  /*NUMBERS SELECT*/
-  .ac-btns_selection {
-    flex-direction: column;
-    height: 85px;
-  }
-  .ac-select button {
-    width: 100%;
-    height: 35px;
-    font-size: 14px;
-  }
-  .ac-show_numbers {
-    padding: 30px 0px !important;
-  }
-  /*FORM*/
-  .ac-form_info form {
-    flex-flow: column;
-  }
-  .ac-form_info form label {
-    font-size: 14px;
-  }
-  /*PAYMENT*/
-  .ac-payment .ac-container_pay {
-    width: 100%;
-    padding: 0px 10px !important;
-  }
-  .ac-container_pay .ac-total span {
-    font-size: 16px;
-  }
-  .ac-btn_payment button {
-    font-size: 13px;
-  }
-}
-@media screen and ((min-width: 768px) and (max-width: 1023px)) {
-  .ac-content_widget {
-    height: 117vh;
-  }
-  .ac-banner .ac-banner_img {
-    background-image: url(../img/img_tablet.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 320px;
-    border-radius: 15px;
-    margin: auto;
-  }
-  .ac-payment {
-    width: 100%;
-    padding: 15px 0px;
-  }
-  .ac-container_pay {
-    width: 768px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0px 20px !important;
-  }
+}
+.ac-valor_total {
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+}
+.ac-btn_payment {
+    background-color: #f27e63 !important;
+    border: 2px solid #f27e63 !important;
+    border-radius: 5px !important;
+    color: #fff !important;
+    padding: 10px 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+}
+.ac-btn_payment:hover {
+    border: 2px solid #f27e63 !important;
+    background-color: transparent !important;
+    color: #f27e63 !important;
+}
+@media screen and (max-width: 1023px) {
+    /*BANNER*/
+    .ac-img_mobile,
+    .ac-img_desktop {
+        display: none;
+    }
+    .ac-img_tablet {
+        display: block;
+    }
+}
+@media screen and (max-width: 767px) {
+    /*STANDART*/
+    .h4-title {
+        font-size: 18px;
+    }
+    /*MAIN*/
+    .ac-banner_desc p {
+        font-size: 17px;
+    }
+    .ac-img_tablet,
+    .ac-img_desktop {
+        display: none;
+    }
+    .ac-img_mobile {
+        display: block !important;
+    }
+    /*NUMBERS SELECT*/
+    .ac-btns_selection {
+        flex-direction: column;
+    }
+    .ac-select button {
+        width: 100%;
+        font-size: 14px;
+    }
+    .ac-show_numbers {
+        padding: 30px 0px !important;
+    }
+    /*FORM*/
+    .ac-form_info form {
+        flex-flow: column;
+    }
+    .ac-form_info form label {
+        font-size: 14px;
+    }
+    /*PAYMENT*/
+    .ac-payment .ac-container_pay {
+        display: block;
+        text-align: center;
+    }
+    .ac-payment .ac-container_pay, .ac-payment{
+        padding: 0px !important;
+    }
+    .ac-btn_payment{
+        width: 100%;
+        border-radius: 0px !important;
+        margin-top: 10px !important;
+    }
+    .ac-total p{
+        font-size: 15px;
+    }
+    .ac-total{
+        padding-top: 20px !important;
+    }
 }
