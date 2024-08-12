@@ -116,6 +116,8 @@ body {
 }
 .ac-select-title {
     padding-bottom: 30px !important;
+    font-size: 25px;
+    font-weight: 600;
 }
 .ac-btns_selection {
     display: flex;
@@ -154,41 +156,35 @@ body {
 }
 .ac-grid_item {
     color: #fff;
-    background-color: #02ab64;
-    border: 2px solid #1d7853 !important;
+    background-color: #02ab64 !important;
     flex: 1 1;
-    min-width: 50px;
-    border-radius: 3px;
+    padding: 5px 15px !important;
+    border-radius: 10px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
 }
-.ac-grid_item:hover {
-    color: #fff;
-    background-color: #ab9a03 !important;
-    border: 2px solid #7a7a22 !important;
-}
 .normal {
     color: #fff;
     background-color: #02ab64 !important;
-    border: 2px solid #1d7853 !important;
 }
-.selected {
+.ac-grid_item.ac-active {
     color: #fff;
     background-color: #ab9a03 !important;
-    border: 2px solid #7a7a22 !important;
 }
-.chosen {
+.ac-grid_item.ac-item_block {
     color: #fff;
     background-color: #ab0000 !important;
-    border: 2px solid #701714 !important;
+    pointer-events: none;
+    user-select: none;
 }
 /*SHOW NUMBERS*/
 .ac-show_numbers {
+    display: none;
     text-align: center;
-    padding: 50px 0px !important;
+    padding-top: 80px !important;
 }
 .ac-show_numbers p {
     font-weight: 500;
@@ -200,7 +196,7 @@ body {
 }
 /*FOMR*/
 .ac-form_info {
-    margin: 20px 0px 100px 0px;
+    margin: 80px 0px 100px 0px;
     width: 100%;
 }
 .ac-form_info form {
@@ -239,6 +235,7 @@ body {
     left: 0px;
     width: 100%;
     padding: 25px 0px;
+    display: none;
 }
 .ac-payment .ac-container_pay {
     margin: auto;
@@ -302,9 +299,6 @@ body {
     .ac-select button {
         width: 100%;
         font-size: 14px;
-    }
-    .ac-show_numbers {
-        padding: 30px 0px !important;
     }
     /*FORM*/
     .ac-form_info form {

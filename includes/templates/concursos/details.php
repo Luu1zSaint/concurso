@@ -11,31 +11,19 @@
     </section>
     <section class="ac-numbers_select">
         <div class="ac-select">
-            <h4 class="h4-title ac-select-title">Selecione os Números: </h4>
+            <h4 class="h4-title ac-select-title">Selecione seus números</h4>
             <div class="ac-btns_selection">
-                <button type="button"  class="ac-btn_select ac-active" aut="m">Selecionar Manualmente</button>
-                <button type="button" class="ac-btn_select" aut="a">Selecionar Automaticamente</button>
+                <button type="button" class="ac-btn_select ac-active">Selecionar Manualmente</button>
+                <button type="button" class="ac-btn_select">Selecionar Automaticamente</button>
             </div>
         </div>
         <div class="ac-grid_numbers">
-            <button type="button" class="ac-grid_item">0001</button>
-            <button type="button" class="ac-grid_item">0002</button>
-            <button type="button" class="ac-grid_item">0003</button>
-            <button type="button" class="ac-grid_item">0004</button>
-            <button type="button" class="ac-grid_item">0005</button>
-            <button type="button" class="ac-grid_item">0006</button>
-            <button type="button" class="ac-grid_item">0007</button>
-            <button type="button" class="ac-grid_item">0008</button>
-            <button type="button" class="ac-grid_item">0009</button>
-            <button type="button" class="ac-grid_item">0010</button>
-            <button type="button" class="ac-grid_item">0018</button>
-            <button type="button" class="ac-grid_item">0029</button>
-            <button type="button" class="ac-grid_item">0055</button>
-            <button type="button" class="ac-grid_item">0078</button>
-            <button type="button" class="ac-grid_item">0099</button>
+            <?php for ($i=1; $i < 101; $i++) { ?>
+                <button type="button" class="ac-grid_item <?= $i > 50 ? 'ac-item_block' : '' ?>"><?=$i?></button>
+            <?php } ?>
         </div> 
-        <div class="ac-show_numbers ">
-            <h4 class="ac-h4-title" id="ac-nums_selected"></h4>
+        <div class="ac-show_numbers">
+            <h4 class="ac-h4-title" id="ac-nums_selected">Número selecionado:</h4>
             <p id="ac-resultNums"></p>
         </div>
     </section>
@@ -47,7 +35,7 @@
             </div>
             <div class="ac-input_wpp">
                 <label for="ac-whats">Seu Whatsapp:</label>
-                <input id="ac-whats" type="text" name="whats" required>
+                <input id="ac-whats" class="ac-celular" type="text" name="whats" required>
             </div>
         </form>
     </section>
@@ -55,7 +43,7 @@
         <div class="ac-container_pay">
             <div class="ac-total">
                 <p id="ac-qtd_num_select"></p>
-                <p class="ac-valor_total">R$ 207,90</p>
+                <p class="ac-valor_total">R$ 00,00</p>
             </div>
             <button class="ac-btn_payment" type="button">Ir para o pagamento</button>
         </div>
