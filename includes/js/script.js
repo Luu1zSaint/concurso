@@ -1,48 +1,3 @@
-// document.querySelectorAll(".ac-grid_item").forEach(function (botao) {
-//   botao.addEventListener("click", function () {
-//     if (this.classList.contains("selected")) {
-//       this.classList.remove("selected");
-//       this.classList.add("normal");
-//     } else {
-//       this.classList.add("selected");
-//     }
-//   });
-// });
-
-// function formatResult(array) {
-//   array.sort((a, b) => a - b);
-//   document.getElementById("resultNums").textContent = array.join(', ');
-// }
-// function qtdNums(array) {
-//   console.log(array);
-//   let qtdArray = array.length;
-//   if (qtdArray == 1 ){
-//     document.getElementById("qtd_num_select").textContent = qtdArray + " Número Selecionado :";
-//     document.getElementById("nums_selected").textContent ="Número Selecionado";
-//     document.getElementById("second_total").classList.remove('hidden');
-//   }else if(qtdArray > 1 ){
-//     document.getElementById("qtd_num_select").textContent = qtdArray + " Números Selecionados :";
-//     document.getElementById("nums_selected").textContent ="Números Selecionados";
-//   }else{
-//     document.getElementById("nums_selected").textContent ="";
-//     document.getElementById("qtd_num_select").textContent =" ";
-//   }
-// }
-// let arrayBtn = [];
-// document.querySelectorAll(".ac-grid_item").forEach((buttom) =>{
-//   buttom.addEventListener("click", () => {
-//     let btnValue = buttom.value;
-//     if (arrayBtn.includes(btnValue)){
-//       let index = arrayBtn.indexOf(btnValue);
-//       arrayBtn.splice(index, 1);
-//     }else{
-//       arrayBtn.push(btnValue);
-//     }
-//     formatResult(arrayBtn);
-//     qtdNums(arrayBtn)
-// })})
-
-
 jQuery(document).ready(function($){
 
   let num_choices = [];
@@ -51,6 +6,90 @@ jQuery(document).ready(function($){
   $(".ac-btn_select").on('click', function(){
     $(".ac-btn_select").removeClass('ac-active');
     $(this).toggleClass('ac-active');
+  });
+
+  function format_nums() {
+    let n_text = num_choices.join(', ');
+    let lastIndex = n_text.lastIndexOf(', ');
+    if (lastIndex !== -1) {
+      n_text = n_text.substring(0, lastIndex) + ' e ' + n_text.substring(lastIndex + 1);
+    }
+    return n_text;
+  }
+
+  function fun_allow_nums() {
+    let grid_nums = $(".ac-grid_numbers button:not(.ac-item_block, .ac-active)");
+    let allow_nums = [];
+    grid_nums.each(function() {
+      allow_nums.push($(this).text());
+    });
+    return {
+      array_nums: allow_nums, 
+      array_item: grid_nums
+    };
+  }
+  
+
+  function number_gem(n, array_nums, array_item) {
+    
+    console.log(array_nums);
+    let i = 0;
+    while (i < n) {
+      let random_num = Math.floor(Math.random()*100);
+      if($.inArray(String(random_num), array_nums) !== -1){
+
+        var index = num_choices.indexOf(random_num);
+
+        if(index == 1){
+          continue;
+        } else {
+          num_choices.push(random_num);
+        }
+        
+        array_item.each(function() {
+          if ($(this).text() == String(random_num)) {
+            $(this).addClass("ac-active")}});
+        
+        i++;
+      }
+    }
+    
+    num_choices.sort(function(a, b) {
+      return a - b;
+    });
+
+    let n_text = format_nums();
+    let text_choice = num_choices.length > 1 ? "Números selecionados:" : "Número selecionado:";
+    let val_total = num_choices.length * parseFloat(unit_val);
+
+    fun_allow_nums();
+    return [n_text, text_choice, val_total];
+  }
+  $("#ac-btn_confirmar").on('click', function() {
+    let qtd_nums = parseInt($("#ac-qtd_nums").val());
+
+    let allow_nums = fun_allow_nums()
+
+    let result = number_gem(qtd_nums, allow_nums.array_nums, allow_nums.array_item);
+
+    if(num_choices.length > 0){
+      $(".ac-show_numbers, .ac-payment, #ac-qtd_num_selects").show();
+    } else{
+      $(".ac-show_numbers, .ac-payment, #ac-qtd_num_selects").hide();
+    }
+
+    $('#ac-resultNums').text(result[0]);
+    $('#ac-nums_selected, #ac-qtd_num_select').text(result[1]);
+    $('#ac-qtd_num_select').text(num_choices.length+" "+result[1]);
+    $('.ac-valor_total').text(result[2].toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+  });
+
+  $(".ac-btn_modal").on('click', function() {
+    var value_toAdd = parseInt($(this).attr('value'));
+    var current_value = parseInt($("#ac-qtd_nums").val()) || 0;
+    var new_value = current_value + value_toAdd;
+    $("#ac-qtd_nums").val(new_value);
+  
   });
 
   $(".ac-grid_item").on('click', function(){
@@ -68,24 +107,22 @@ jQuery(document).ready(function($){
         return a - b;
     });
 
-    let n_text = num_choices.join(', ');
-    let lastIndex = n_text.lastIndexOf(', ');
-    if (lastIndex !== -1) {
-      n_text = n_text.substring(0, lastIndex) + ' e ' + n_text.substring(lastIndex + 1);
+    let n_text = format_nums();
+    
+    if(num_choices.length > 0){
+      $(".ac-show_numbers, .ac-payment, #ac-qtd_num_selects").show();
+    } else{
+      $(".ac-show_numbers, .ac-payment, #ac-qtd_num_selects").hide();
     }
+
 
     let text_choice = num_choices.length > 1 ? "Números selecionados:" : "Número selecionado:";
-
-    if(num_choices.length > 0){
-      $(".ac-show_numbers, .ac-payment").show();
-    } else{
-      $(".ac-show_numbers, .ac-payment").hide();
-    }
-
     let val_total = num_choices.length * parseFloat(unit_val);
 
+    
     $('#ac-resultNums').text(n_text);
-    $('#ac-nums_selected').text(text_choice);
+    $('#ac-nums_selected, #ac-qtd_num_select').text(text_choice);
+    $('#ac-qtd_num_select').text(num_choices.length+" "+text_choice);
     $('.ac-valor_total').text(val_total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
   });
 

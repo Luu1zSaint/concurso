@@ -145,6 +145,73 @@ body {
     background-color: #f27e63 !important;
     color: #fff !important;
 }
+/*MODAL*/
+dialog {
+    position: fixed;
+    top: 40%;
+    left: 25%;
+    z-index: 5;
+    padding: 20px !important;
+	background: #fff !important;
+	width: 740px;
+	border-radius: 20px;
+	box-shadow: 0 5px 30px 0 #f27e63 !important;
+	animation: fadeIn 1s ease both;
+	&::backdrop {
+		animation: fadeIn 1s ease both;
+		background: rgb(255 255 255 / 40%);
+		z-index: 2;
+		backdrop-filter: blur(20px);
+	}
+}
+#dialog h2{
+    padding-bottom: 40px !important;
+}
+.ac-x {
+    width: 100%;
+    background: none;
+    transform-origin: center;
+    margin-top: 10px !important;
+}
+#dialog input[type=number] {
+    width: 100%;
+    border-bottom: 2px solid #f27e63 !important;
+    border-radius: 3px;
+    padding: 10px 25px !important;
+    font-size: 16px;
+}
+#dialog input[type=number]:focus {
+    box-shadow: 0px 2px 5px #f27e63;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.ac-btns_choises{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 20px !important;
+}
+.ac-btn_modal{
+    flex: 1 1;
+    font-size: 16px;
+    border: 2px solid #f27e63 !important;
+    background-color: transparent !important;
+    color: #f27e63 !important;
+    border-radius: 5px !important;
+    padding: 10px 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+}
+.ac-btn_modal:hover {
+    border: 2px solid #f27e63 !important;
+    background-color: #f27e63 !important;
+    color: #fff !important;
+}
 /*GRID NUMBERS*/
 .ac-grid_numbers {
     display: flex;
@@ -199,6 +266,9 @@ body {
     margin: 80px 0px 100px 0px;
     width: 100%;
 }
+.ac-input_name #ac-name{
+    text-transform: capitalize;
+}
 .ac-form_info form {
     display: flex;
     flex-flow: row;
@@ -244,8 +314,10 @@ body {
     justify-content: space-between;
     padding: 0px 20px !important;
 }
+.ac-total p{
+    color: #fff !important;
+}
 .ac-valor_total {
-    color: #fff;
     font-weight: 500;
     font-size: 24px;
 }
@@ -275,6 +347,15 @@ body {
     .ac-img_tablet {
         display: block;
     }
+    /*MODAL*/
+    dialog {
+        top: 20%;
+        left: 5%;
+        width: 700px;
+    }
+    #dialog h2{
+        font-size: 22px;
+    }
 }
 @media screen and (max-width: 767px) {
     /*STANDART*/
@@ -299,6 +380,17 @@ body {
     .ac-select button {
         width: 100%;
         font-size: 14px;
+    }
+    /*MODAL*/
+    dialog {
+        top: 20%;
+        left: 6%;
+    }
+    #dialog h2{
+        font-size: 22px;
+    }
+    .ac-btns_choises{
+        display: none;
     }
     /*FORM*/
     .ac-form_info form {

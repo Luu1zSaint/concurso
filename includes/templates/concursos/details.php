@@ -14,8 +14,19 @@
             <h4 class="h4-title ac-select-title">Selecione seus números</h4>
             <div class="ac-btns_selection">
                 <button type="button" class="ac-btn_select ac-active">Selecionar Manualmente</button>
-                <button type="button" class="ac-btn_select">Selecionar Automaticamente</button>
+                <button type="button" class="ac-btn_select" onclick="window.dialog.showModal();">Selecionar Automaticamente</button>
             </div>
+                <dialog id="dialog">
+                    <h2>Quantidade de números aleatórios</h2>
+                    <input type="number" id="ac-qtd_nums">
+                    <div class="ac-btns_choises">
+                        <button type="button" class="ac-btn_modal" value="1">+1</button>
+                        <button type="button" class="ac-btn_modal" value="5">+5</button>
+                        <button type="button" class="ac-btn_modal" value="10">+10</button>
+                    </div>
+                    <button type="button" id="ac-btn_confirmar" class="ac-btn_modal ac-x" onclick="window.dialog.close();">Confirmar</button>
+                    <button type="button" class="ac-btn_modal ac-x" onclick="window.dialog.close();" aria-label="close">Fechar</button>
+                </dialog>
         </div>
         <div class="ac-grid_numbers">
             <?php for ($i=1; $i < 101; $i++) { ?>
@@ -42,7 +53,7 @@
     <section class="ac-payment">
         <div class="ac-container_pay">
             <div class="ac-total">
-                <p id="ac-qtd_num_select"></p>
+                <p id="ac-qtd_num_select">Número selecionado</p>
                 <p class="ac-valor_total">R$ 00,00</p>
             </div>
             <button class="ac-btn_payment" type="button">Ir para o pagamento</button>
