@@ -103,6 +103,10 @@ body {
 .ac-banner .ac-banner_desc p {
     width: 100%;
     text-align: center;
+    margin-bottom: 10px;
+}
+.ac-title{
+    font-size: 26px;
 }
 /*NUMBERS SELECT*/
 .ac-numbers_select {
@@ -144,6 +148,12 @@ body {
     border: 2px solid #f27e63 !important;
     background-color: #f27e63 !important;
     color: #fff !important;
+}
+.ac-btn_select.ac-disabled{
+    border: 2px solid #f27d634f !important;
+    background-color: #f27d634f !important;
+    pointer-events: none;
+    user-select: none;
 }
 /*MODAL*/
 dialog {
@@ -211,6 +221,10 @@ dialog {
     border: 2px solid #f27e63 !important;
     background-color: #f27e63 !important;
     color: #fff !important;
+}
+/*ALOW NUMBRES*/
+.ac-allow_nums p{
+    text-align: center;
 }
 /*GRID NUMBERS*/
 .ac-grid_numbers {
