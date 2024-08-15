@@ -238,7 +238,7 @@ dialog {
 .ac-grid_item {
     color: #fff;
     background-color: #02ab64 !important;
-    flex: 1 1;
+    flex: 1 1 60px;
     padding: 5px 15px !important;
     border-radius: 10px;
     text-align: center;

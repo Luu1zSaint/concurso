@@ -31,21 +31,17 @@ jQuery(document).ready(function($){
   function att_grid() {
     let att_grid = fun_allow_nums();
     let length_grid = att_grid.array_item.length;
-    if( length_grid < 10){
-      $('.ac-allow_nums').text("Números disponíveis: "+length_grid);
-      $(".ac-btn_select_auto").addClass('ac-disabled');
-    }
-    else if (length_grid == 1) {
-      $('.ac-allow_nums').text("Números disponíveis: "+length_grid);
-      $(".ac-btn_select_auto").addClass('ac-disabled');
-    }
-    else if (length_grid > 10) {
+    if (length_grid >= 10) {
       $('.ac-allow_nums').text("Números disponíveis: "+length_grid);
       $(".ac-btn_select_auto").removeClass('ac-disabled');
     }
-    else{
+    else if (length_grid == 0) {
       $(".ac-btn_select_auto").addClass('ac-disabled');
       $('.ac-allow_nums').text("Nenhum número disponível");
+    }
+    else{
+      $('.ac-allow_nums').text("Números disponíveis: "+length_grid);
+      $(".ac-btn_select_auto").addClass('ac-disabled');
     }
   }
 
@@ -61,25 +57,27 @@ jQuery(document).ready(function($){
     };
   }
   
-  function number_gem(n, array_nums, array_item) {
+  function number_gem(n, array_item) {
     let i = 0;
+
     while (i < n) {
-      let random_num = Math.floor(Math.random()*100);
-      let array_nums = fun_allow_nums();
-      if($.inArray(String(random_num), array_nums.array_nums) !== -1){
+      let array_nums_allow = fun_allow_nums();
+      let random_num = Math.floor(Math.random()*101);
+      if($.inArray(String(random_num), array_nums_allow.array_nums) !== -1){
         
-        let check_num = in_array(random_num);
-        if(check_num){ 
+        var index = num_choices.indexOf(random_num);
+        if(index !== -1){
           continue;
+        } else {
+          num_choices.push(random_num);
         }
 
         array_item.each(function() {
           if ($(this).text() == String(random_num)) {
             $(this).addClass("ac-active")
-          }
-        });
-        
-        i++;  
+          }});
+
+        i++;
       }
     }
     
@@ -99,7 +97,7 @@ jQuery(document).ready(function($){
 
     let qtd_nums = check_length > parseInt($("#ac-qtd_nums").val()) ? parseInt($("#ac-qtd_nums").val()) : check_length;
 
-    let result = number_gem(qtd_nums, allow_nums.array_nums, allow_nums.array_item);
+    let result = number_gem(qtd_nums, allow_nums.array_item);
 
     if(num_choices.length > 0){
       $(".ac-show_numbers, .ac-payment, #ac-qtd_num_selects").show();
@@ -158,6 +156,4 @@ jQuery(document).ready(function($){
   });
 
   att_grid();
-  
-
 });
